@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokerClickerV3.GamePage"
+             Title="GamePage">
+
+    <!-- Content Layout -->
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <!-- Navbar -->
+        <Grid BackgroundColor="White" Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Game" Clicked="OnGameButtonClicked" Grid.Column="0" />
+            <Button Text="Shop" Clicked="OnShopButtonClicked" Grid.Column="1" />
+            <Button Text="Settings" Clicked="OnSettingsButtonClicked" Grid.Column="2" />
+        </Grid>
+
+        <!-- Placeholder for Image and Score -->
+        <StackLayout x:Name="stackLayout" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <!-- Image -->
+            <Image Source="Poker.png"
+                   HeightRequest="200"
+                   HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPokerImageTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- Score -->
+            <Label x:Name="ScoreLabel"
+                   Text="Score: 0"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
